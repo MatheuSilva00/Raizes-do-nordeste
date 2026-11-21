@@ -17,20 +17,22 @@ Crie e ative um ambiente virtual. No PowerShell do Windows, use python -m venv .
 Instale as dependências registradas em requirements.txt com pip install -r requirements.txt.
 Inicie a API com uvicorn app.main:app --reload.
 Acesse a documentação interativa em http://127.0.0.1:8000/docs.
+
+
 Principais endpoints
 
+Método	            Endpoint	                  Finalidade
+GET / POST        	/unidades/	            Consultar ou cadastrar unidades
+GET / POST         	/produtos/	           Consultar ou cadastrar produtos
+GET / POST      	/estoques/	            Consultar ou cadastrar estoque
+POST	          /auth/cadastro	            Cadastrar usuário
+POST	          /auth/login	              Fazer login e obter token
+GET	            /auth/me               	Consultar o usuário autenticado
+GET / POST	    /pedidos/              	Consultar ou criar pedidos autenticados
+POST	/pagamentos/{pedido_id}          	Simular o pagamento de um pedido
 
-
-Método	Endpoint	Finalidade
-GET / POST	/unidades/	Consultar ou cadastrar unidades
-GET / POST	/produtos/	Consultar ou cadastrar produtos
-GET / POST	/estoques/	Consultar ou cadastrar estoque
-POST	/auth/cadastro	Cadastrar usuário
-POST	/auth/login	Fazer login e obter token
-GET	/auth/me	Consultar o usuário autenticado
-GET / POST	/pedidos/	Consultar ou criar pedidos autenticados
-POST	/pagamentos/{pedido_id}	Simular o pagamento de um pedido
 Os caminhos devem ser conferidos no Swagger, que apresenta as rotas disponibilizadas pela versão atual do projeto.
+
 
 Escopo e limitações
 Este projeto é um protótipo acadêmico. O pagamento é simulado; não há processamento real de cartões. Recursos como relatórios gerenciais, auditoria completa e integração com um provedor externo de pagamento podem ser considerados como evolução futura.
